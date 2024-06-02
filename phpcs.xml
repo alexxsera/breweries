@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<ruleset>
+
+    <file>app</file>
+    <file>bootstrap/app.php</file>
+    <file>config</file>
+    <file>database/factories</file>
+    <file>database/seeders</file>
+    <file>public/index.php</file>
+    <file>routes</file>
+    <file>tests</file>
+
+<!--    <exclude-pattern>*.tpl</exclude-pattern>-->
+
+    <arg name="basepath" value="." />
+    <arg name="cache" value="bootstrap/cache/phpcs/.phpcs.cache" />
+    <arg name="colors" />
+    <arg name="error-severity" value="1" />
+    <arg name="extensions" value="php" />
+    <arg name="parallel" value="8" />
+    <arg name="warning-severity" value="0" />
+    <arg value="s" />
+
+    <rule ref="Doctrine">
+        <exclude name="Generic.Formatting.MultipleStatementAlignment" />
+        <exclude name="Squiz.Classes.ValidClassName.NotCamelCaps" />
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType" />
+        <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming.SuperfluousPrefix" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousTraitNaming.SuperfluousSuffix" />
+    </rule>
+
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array" value="sizeof=>count,delete=>unset,print=>echo,is_null=>null,create_function=>null"  extend="true">
+                <!--<property name="forbiddenFunctions" type="array" extend="true">-->
+                <!--<element key="curl_close" value="null" />
+                <element key="curl_exec" value="null" />
+                <element key="curl_init" value="null" />
+                <element key="curl_setopt_array" value="null" />
+                <element key="md5" value="null" />-->
+            </property>
+        </properties>
+    </rule>
+
+</ruleset>
