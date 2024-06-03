@@ -31,4 +31,6 @@ use this credentials to login to the app and test the api
 
 api responds to http://localhost:8000/
 
+to run the tests run command php artisan test
+
 []: # (end)
